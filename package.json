@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "airtable": "^0.5.0",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "emotion": "^2.0.0",
+    "express": "^4.15.3",
+    "glam": "^4.0.5",
+    "postcss-cli": "^4.1.0",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0",
+    "react": "next",
+    "react-dom": "next",
+    "webpack": "^2.6.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "name": "habitmeter",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "bundle-collapser": "^1.2.1",
+    "envify": "^4.0.0",
+    "uglify-js": "^3.0.15",
+    "uglifyify": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "prebuild": "rm -r dist && mkdir dist",
+    "build": "babel src --out-dir dist && postcss src/client/app.css --dir dist/public && webpack",
+    "predev": "rm -r dist && mkdir dist",
+    "dev": "babel src --out-dir dist && postcss src/**/*.css src/**/**/*.css --dir dist/public && webpack && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
+  "license": "MIT",
+  "description": ""
+}
