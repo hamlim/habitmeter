@@ -36,9 +36,12 @@ app.use(_bodyParser2.default.json());
 
 app.get('/', function (req, res) {
 	res.send('\n\t<html lang="en">\n\t\t<head>\n\t\t\t<title>Habitmeter</title>\n\t\t\t<link rel="stylesheet" href="/static/app.css" />\n\t\t\t<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.4/tachyons.css" />\n\t\t</head>\n\t\t<body>\n\t\t\t<div id="app">' + (0, _server.renderToString)(_react2.default.createElement(_app2.default, null)) + '</div>\n\t\t\t<script src="/static/bundle.js" defer></script>\n\t\t</body>\n\t</html>\n');
-});
+}
 
-app.post('/update', function (req, res) {
+/**
+ * Post endpoint
+ */
+);app.post('/update', function (req, res) {
 	if (req.body.hasSubmitted) {
 		base('Table 1').replace(req.body.recId, {
 			'15 minutes of yoga': req.body.yoga,

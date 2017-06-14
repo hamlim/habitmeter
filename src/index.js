@@ -33,6 +33,9 @@ app.get('/', (req, res) => {
 `)
 })
 
+/**
+ * Post endpoint
+ */
 app.post('/update', (req, res) => {
 	if (req.body.hasSubmitted) {
 		base('Table 1').replace(
